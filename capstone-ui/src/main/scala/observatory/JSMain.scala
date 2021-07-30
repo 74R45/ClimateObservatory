@@ -33,9 +33,9 @@ object JSMain {
     val mapElement = tags.div(styles.height := "100%").render
     val map = L.map(mapElement, MapOptions(zoomControl = false, maxZoom = 3))
     map.setView(L.latLng(48.0, 14.0), 3)
-    L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png").addTo(map)
+    L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png", "anonymous").addTo(map)
     val urlSignal = Interaction2.layerUrlPattern(selectedLayer, selectedYear)
-    val layer = L.tileLayer(urlSignal())
+    val layer = L.tileLayer(urlSignal(), "anonymous")
     layer.addTo(map)
     Signal {
       layer.setUrl(urlSignal())

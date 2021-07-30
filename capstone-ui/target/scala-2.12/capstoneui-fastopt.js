@@ -1237,9 +1237,9 @@ $c_Lobservatory_JSMain$.prototype.setupMap__Lobservatory_Signal__Lobservatory_Si
   var mapElement = $$x1.apply__sc_Seq__Lscalatags_JsDom$TypedTag($ct_sjs_js_WrappedArray__sjs_js_Array__(new $c_sjs_js_WrappedArray(), array)).render__Lorg_scalajs_dom_raw_Element();
   var map = L.map(mapElement, new $c_Lleaflet_MapOptions(false, 3));
   map.setView(L.latLng(48.0, 14.0), 3);
-  L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png").addTo(map);
+  L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png", "anonymous").addTo(map);
   var urlSignal = $m_Lobservatory_Interaction2$().layerUrlPattern__Lobservatory_Signal__Lobservatory_Signal__Lobservatory_Signal(selectedLayer, selectedYear);
-  var layer = L.tileLayer($as_T(urlSignal.apply__O()));
+  var layer = L.tileLayer($as_T(urlSignal.apply__O()), "anonymous");
   layer.addTo(map);
   $m_Lobservatory_Signal$();
   var expr = new $c_sjsr_AnonFunction0(((this$4, layer$1, urlSignal$1) => (() => {
@@ -1292,7 +1292,6 @@ $c_Lobservatory_JSMain$.prototype.makeSlider__Lobservatory_Signal__T2 = (functio
   var expr = new $c_sjsr_AnonFunction0(((this$1, yearBounds$1) => (() => $as_sci_Range(yearBounds$1.apply__O()).max__s_math_Ordering__I($m_s_math_Ordering$Int$())))(this, yearBounds));
   var sliderValue = new $c_Lobservatory_Var(expr);
   var selectedYear = $m_Lobservatory_Interaction2$().yearSelection__Lobservatory_Signal__Lobservatory_Signal__Lobservatory_Signal(selectedLayer, sliderValue);
-  var captionSignal = $m_Lobservatory_Interaction2$().caption__Lobservatory_Signal__Lobservatory_Signal__Lobservatory_Signal(selectedLayer, selectedYear);
   $m_Lobservatory_Signal$();
   var expr$2 = new $c_sjsr_AnonFunction0(((this$2$1, yearBounds$2, selectedYear$1, sliderValue$1) => (() => {
     var this$3 = $m_Lscalatags_JsDom$tags$();
@@ -1325,6 +1324,7 @@ $c_Lobservatory_JSMain$.prototype.makeSlider__Lobservatory_Signal__T2 = (functio
     return $$x9.apply__sc_Seq__Lscalatags_JsDom$TypedTag($ct_sjs_js_WrappedArray__sjs_js_Array__(new $c_sjs_js_WrappedArray(), array))
   }))(this, yearBounds, selectedYear, sliderValue));
   var input$2 = $ct_Lobservatory_Signal__F0__(new $c_Lobservatory_Signal(), expr$2);
+  var captionSignal = $m_Lobservatory_Interaction2$().caption__Lobservatory_Signal__Lobservatory_Signal__Lobservatory_Signal(selectedLayer, selectedYear);
   $m_Lobservatory_Signal$();
   var expr$3 = new $c_sjsr_AnonFunction0(((this$3$1, captionSignal$1) => (() => {
     var this$15 = $m_Lscalatags_JsDom$tags$();

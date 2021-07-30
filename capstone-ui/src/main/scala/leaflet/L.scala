@@ -12,7 +12,7 @@ object L extends js.Object {
 
   def map(elementId: Element, options: MapOptions): Map = js.native
 
-  def tileLayer(urlPattern: String): TileLayer = js.native
+  def tileLayer(urlPattern: String, crossOrigin: String): TileLayer = js.native
 
   def control: ControlFactory = js.native
 
