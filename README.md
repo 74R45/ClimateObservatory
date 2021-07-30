@@ -27,7 +27,7 @@ Additionally, there's a ***deviations*** overlay, which shows how the yearly ave
    -   Make sure you have [scala-sbt](https://www.scala-sbt.org/) installed
    -   Run [Generator.scala](src/main/scala/observatory/utils/Generator.scala) to generate all Tiles
    -   In sbt terminal run `capstoneUI/fastOptJS` to parse Scala.js code to JavaScript
-   -   Open [interaction2.html](interaction2.html) in browser
+   -   Open [index.html](index.html) in browser
 
 ## *What's next?*
 
