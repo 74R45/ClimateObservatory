@@ -1,4 +1,8 @@
-capstone-ui/target
+capstone-ui/target/*
+!capstone-ui/target/scala-2.12/
+capstone-ui/target/scala-2.12/*
+!capstone-ui/target/scala-2.12/capstoneui-fastopt.js
+
 null/
 project/target
 project/project/target
