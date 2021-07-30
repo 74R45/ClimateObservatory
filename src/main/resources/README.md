@@ -1,0 +1,1 @@
+#### Download the [dataset](https://moocs.scala-lang.org/files/scala-capstone-data.zip) and extract it in this folder.

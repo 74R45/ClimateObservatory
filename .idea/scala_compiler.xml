@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="sbt 1" modules="observatory_2413" />
+    <profile name="sbt 2" modules="capstone-observatory">
+      <option name="deprecationWarnings" value="true" />
+      <option name="uncheckedWarnings" value="true" />
+      <option name="featureWarnings" value="true" />
+      <parameters>
+        <parameter value="-encoding" />
+        <parameter value="UTF-8" />
+        <parameter value="-Xlint" />
+      </parameters>
+    </profile>
+    <profile name="sbt 3" modules="capstoneUI">
+      <plugins>
+        <plugin path="C:\Users\74R45\.ivy2\cache\org.scala-js\scalajs-compiler_2.12.8\jars\scalajs-compiler_2.12.8-1.6.0.jar" />
+      </plugins>
+    </profile>
+  </component>
+</project>
