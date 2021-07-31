@@ -3,7 +3,7 @@ package observatory
 import leaflet.L
 
 import scala.scalajs.js
-import org.scalajs.dom.{Event, Node, console, document}
+import org.scalajs.dom.{Event, Node, document}
 import org.scalajs.dom.html.Input
 import scalatags.{DataConverters, LowPriorityImplicits}
 import scalatags.JsDom.{Aggregate, Cap, attrs, styles, tags}
@@ -29,7 +29,6 @@ object JSMain {
 
   def setupMap(selectedLayer: Signal[Layer], selectedYear: Signal[Int]): Unit = {
     val mapElement = tags.div(styles.height := "100%").render
-    console.log(js.Dynamic.literal(zoomControl = false, maxZoom = 3))
     val map = L.map(mapElement, js.Dynamic.literal(zoomControl = false, maxZoom = 3))
     map.setView(L.latLng(48.0, 14.0), 3)
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", js.Dynamic.literal(crossOrigin = "anonymous")).addTo(map)
