@@ -27,11 +27,11 @@ Additionally, there's a ***deviations*** overlay, which shows how the yearly ave
    -   Make sure you have [scala-sbt](https://www.scala-sbt.org/) installed
    -   Run [Generator.scala](src/main/scala/observatory/utils/Generator.scala) to generate all Tiles
    -   In sbt terminal run `capstoneUI/fastOptJS` to parse Scala.js code to JavaScript
-   -   Open [index.html](index.html) in browser
+   -   Open [index.html](index.html) in your browser
 
 ## *What's next?*
 
-There are some flaws in this project, but as of right now I don't see the point of fixing them, so I'll just write them down here:
+There are some flaws in this project, but as of right now I don't see a reason to fix them, so I'll just write them down here:
 -   Some stations haven't recorded data every single day of the year, which resulted in some data being obviously incorrect.
-    For instance, some stations at Antarctica only recorded temperatures during summer, which resulted in average temperatures being way higher than they needed to me.
+    For instance, some stations at Antarctica only recorded temperatures during summer, which resulted in average temperatures being way higher than they needed to be.
 -   Code is not covered with Unit Tests.
