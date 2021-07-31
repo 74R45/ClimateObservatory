@@ -32,7 +32,7 @@ object JSMain {
     console.log(js.Dynamic.literal(zoomControl = false, maxZoom = 3))
     val map = L.map(mapElement, js.Dynamic.literal(zoomControl = false, maxZoom = 3))
     map.setView(L.latLng(48.0, 14.0), 3)
-    L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png", js.Dynamic.literal(crossOrigin = "anonymous")).addTo(map)
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", js.Dynamic.literal(crossOrigin = "anonymous")).addTo(map)
     val urlSignal = Interaction2.layerUrlPattern(selectedLayer, selectedYear)
     val layer = L.tileLayer(urlSignal(), js.Dynamic.literal(errorTileUrl = "target/errorTile.png"))
     layer.addTo(map)

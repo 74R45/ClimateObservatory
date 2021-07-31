@@ -20,7 +20,7 @@ Additionally, there's a ***deviations*** overlay, which shows how the yearly ave
 
 ## *How do I use it?*
 
-1. Go to https://74r45.github.io/ClimateObservatory/. This version only contains years 2014 and 2015 with zoom levels 0 to 3, but it's available anytime.
+1. Go to https://74r45.github.io/ClimateObservatory/. This version doesn't contain data for all years, but it's available anytime.
 2. Try it yourself locally! To do this:
    -   Clone the repository
    -   [Download the dataset](src/main/resources)

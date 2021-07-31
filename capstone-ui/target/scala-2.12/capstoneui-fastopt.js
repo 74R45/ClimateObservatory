@@ -1244,7 +1244,7 @@ $c_Lobservatory_JSMain$.prototype.setupMap__Lobservatory_Signal__Lobservatory_Si
     "maxZoom": 3
   });
   map.setView(L.latLng(48.0, 14.0), 3);
-  L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png", {
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     "crossOrigin": "anonymous"
   }).addTo(map);
   var urlSignal = $m_Lobservatory_Interaction2$().layerUrlPattern__Lobservatory_Signal__Lobservatory_Signal__Lobservatory_Signal(selectedLayer, selectedYear);
