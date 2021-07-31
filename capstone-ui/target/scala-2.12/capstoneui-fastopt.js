@@ -1235,20 +1235,34 @@ $c_Lobservatory_JSMain$.prototype.setupMap__Lobservatory_Signal__Lobservatory_Si
   var $$x1 = this$1.div__Lscalatags_JsDom$TypedTag();
   var array = [$m_Lscalatags_JsDom$styles$().height__Lscalatags_generic_StyleMisc$PixelAutoStyle().$colon$eq__O__Lscalatags_generic_PixelStyleValue__Lscalatags_generic_StylePair("100%", $m_Lobservatory_Implicits$().Lobservatory_Implicits$__f_stringPixelStyle)];
   var mapElement = $$x1.apply__sc_Seq__Lscalatags_JsDom$TypedTag($ct_sjs_js_WrappedArray__sjs_js_Array__(new $c_sjs_js_WrappedArray(), array)).render__Lorg_scalajs_dom_raw_Element();
-  var map = L.map(mapElement, new $c_Lleaflet_MapOptions(false, 3));
+  $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console().log({
+    "zoomControl": false,
+    "maxZoom": 3
+  });
+  var map = L.map(mapElement, {
+    "zoomControl": false,
+    "maxZoom": 3
+  });
   map.setView(L.latLng(48.0, 14.0), 3);
-  L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png", "anonymous").addTo(map);
+  L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png", {
+    "crossOrigin": "anonymous"
+  }).addTo(map);
   var urlSignal = $m_Lobservatory_Interaction2$().layerUrlPattern__Lobservatory_Signal__Lobservatory_Signal__Lobservatory_Signal(selectedLayer, selectedYear);
-  var layer = L.tileLayer($as_T(urlSignal.apply__O()), "anonymous");
+  var layer = L.tileLayer($as_T(urlSignal.apply__O()), {
+    "errorTileUrl": "target/errorTile.png"
+  });
   layer.addTo(map);
   $m_Lobservatory_Signal$();
-  var expr = new $c_sjsr_AnonFunction0(((this$4, layer$1, urlSignal$1) => (() => {
+  var expr = new $c_sjsr_AnonFunction0(((this$22, layer$1, urlSignal$1) => (() => {
     layer$1.setUrl($as_T(urlSignal$1.apply__O()))
   }))(this, layer, urlSignal));
   $ct_Lobservatory_Signal__F0__(new $c_Lobservatory_Signal(), expr);
+  map.addControl(L.control.zoom({
+    "position": "bottomright"
+  }));
   var $$x2 = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().body;
-  var this$6 = $m_Lobservatory_Implicits$();
-  $$x2.appendChild(new $c_Lscalatags_LowPriorityImplicits$bindNode(this$6, mapElement).Lscalatags_LowPriorityImplicits$bindNode__f_e);
+  var this$28 = $m_Lobservatory_Implicits$();
+  $$x2.appendChild(new $c_Lscalatags_LowPriorityImplicits$bindNode(this$28, mapElement).Lscalatags_LowPriorityImplicits$bindNode__f_e);
   map.invalidateSize()
 });
 $c_Lobservatory_JSMain$.prototype.makeRadioButtons__sc_Seq__T2 = (function(availableLayers) {
@@ -1264,7 +1278,7 @@ $c_Lobservatory_JSMain$.prototype.makeRadioButtons__sc_Seq__T2 = (function(avail
   var $$x8 = $m_Lscalatags_JsDom$styles$().right__Lscalatags_generic_StyleMisc$PixelAutoStyle().$colon$eq__O__Lscalatags_generic_PixelStyleValue__Lscalatags_generic_StylePair(0, $m_Lobservatory_Implicits$().Lobservatory_Implicits$__f_intPixelStyle);
   var $$x7 = $m_Lscalatags_JsDom$styles$().left__Lscalatags_generic_StyleMisc$PixelAutoStyle();
   var this$5 = $m_Lobservatory_Implicits$();
-  var $$x6 = $$x7.$colon$eq__O__Lscalatags_generic_PixelStyleValue__Lscalatags_generic_StylePair(new $c_Lscalatags_DataConverters$CssNumber(this$5, 50, $m_s_math_Numeric$IntIsIntegral$()).px__T(), $m_Lobservatory_Implicits$().Lobservatory_Implicits$__f_stringPixelStyle);
+  var $$x6 = $$x7.$colon$eq__O__Lscalatags_generic_PixelStyleValue__Lscalatags_generic_StylePair(new $c_Lscalatags_DataConverters$CssNumber(this$5, 10, $m_s_math_Numeric$IntIsIntegral$()).px__T(), $m_Lobservatory_Implicits$().Lobservatory_Implicits$__f_stringPixelStyle);
   var $$x5 = $m_Lscalatags_JsDom$styles$().height__Lscalatags_generic_StyleMisc$PixelAutoStyle();
   var this$6 = $m_Lobservatory_Implicits$();
   var array = [$$x11, $$x9, $$x8, $$x6, $$x5.$colon$eq__O__Lscalatags_generic_PixelStyleValue__Lscalatags_generic_StylePair(new $c_Lscalatags_DataConverters$CssNumber(this$6, 2, $m_s_math_Numeric$IntIsIntegral$()).em__T(), $m_Lobservatory_Implicits$().Lobservatory_Implicits$__f_stringPixelStyle), $m_Lscalatags_JsDom$styles$().zIndex__Lscalatags_generic_StyleMisc$AutoStyle().$colon$eq__O__Lscalatags_generic_StyleValue__Lscalatags_generic_StylePair(1500, $m_Lobservatory_Implicits$().Lobservatory_Implicits$__f_intStyle)];
@@ -1623,6 +1637,13 @@ function $p_Lorg_scalajs_dom_package$__document$lzycompute__Lorg_scalajs_dom_raw
   };
   return $thiz.Lorg_scalajs_dom_package$__f_document
 }
+function $p_Lorg_scalajs_dom_package$__console$lzycompute__Lorg_scalajs_dom_raw_Console($thiz) {
+  if (((134217728 & $thiz.Lorg_scalajs_dom_package$__f_bitmap$0) === 0)) {
+    $thiz.Lorg_scalajs_dom_package$__f_console = console;
+    $thiz.Lorg_scalajs_dom_package$__f_bitmap$0 = (134217728 | $thiz.Lorg_scalajs_dom_package$__f_bitmap$0)
+  };
+  return $thiz.Lorg_scalajs_dom_package$__f_console
+}
 /** @constructor */
 function $c_Lorg_scalajs_dom_package$() {
   this.Lorg_scalajs_dom_package$__f_ApplicationCache = null;
@@ -1667,6 +1688,9 @@ $c_Lorg_scalajs_dom_package$.prototype.window__Lorg_scalajs_dom_raw_Window = (fu
 });
 $c_Lorg_scalajs_dom_package$.prototype.document__Lorg_scalajs_dom_raw_HTMLDocument = (function() {
   return (((67108864 & this.Lorg_scalajs_dom_package$__f_bitmap$0) === 0) ? $p_Lorg_scalajs_dom_package$__document$lzycompute__Lorg_scalajs_dom_raw_HTMLDocument(this) : this.Lorg_scalajs_dom_package$__f_document)
+});
+$c_Lorg_scalajs_dom_package$.prototype.console__Lorg_scalajs_dom_raw_Console = (function() {
+  return (((134217728 & this.Lorg_scalajs_dom_package$__f_bitmap$0) === 0) ? $p_Lorg_scalajs_dom_package$__console$lzycompute__Lorg_scalajs_dom_raw_Console(this) : this.Lorg_scalajs_dom_package$__f_console)
 });
 var $d_Lorg_scalajs_dom_package$ = new $TypeData().initClass({
   Lorg_scalajs_dom_package$: 0
@@ -3639,9 +3663,9 @@ function $c_ju_regex_Matcher(pattern0, input0, regionStart0, regionEnd0) {
   this.ju_regex_Matcher__f_regionEnd0 = regionEnd0;
   this.ju_regex_Matcher__f_regexp = this.ju_regex_Matcher__f_pattern0.newJSRegExp__sjs_js_RegExp();
   var this$1 = this.ju_regex_Matcher__f_input0;
-  var start = this.ju_regex_Matcher__f_regionStart0;
-  var end = this.ju_regex_Matcher__f_regionEnd0;
-  var this$2 = $dp_substring__I__I__T(this$1, start, end);
+  var beginIndex = this.ju_regex_Matcher__f_regionStart0;
+  var endIndex = this.ju_regex_Matcher__f_regionEnd0;
+  var this$2 = $dp_substring__I__I__T(this$1, beginIndex, endIndex);
   this.ju_regex_Matcher__f_inputstr = this$2;
   this.ju_regex_Matcher__f_lastMatch = null;
   this.ju_regex_Matcher__f_lastMatchIsValid = false;
@@ -7612,88 +7636,6 @@ var $d_ju_NoSuchElementException = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_ju_NoSuchElementException.prototype.$classData = $d_ju_NoSuchElementException;
-/** @constructor */
-function $c_Lleaflet_MapOptions(zoomControl, maxZoom) {
-  this.Lleaflet_MapOptions__f_zoomControl = false;
-  this.Lleaflet_MapOptions__f_maxZoom = 0;
-  this.Lleaflet_MapOptions__f_zoomControl = zoomControl;
-  this.Lleaflet_MapOptions__f_maxZoom = maxZoom
-}
-$c_Lleaflet_MapOptions.prototype = new $h_O();
-$c_Lleaflet_MapOptions.prototype.constructor = $c_Lleaflet_MapOptions;
-/** @constructor */
-function $h_Lleaflet_MapOptions() {
-  /*<skip>*/
-}
-$h_Lleaflet_MapOptions.prototype = $c_Lleaflet_MapOptions.prototype;
-$c_Lleaflet_MapOptions.prototype.productPrefix__T = (function() {
-  return "MapOptions"
-});
-$c_Lleaflet_MapOptions.prototype.productArity__I = (function() {
-  return 2
-});
-$c_Lleaflet_MapOptions.prototype.productElement__I__O = (function(x$1) {
-  switch (x$1) {
-    case 0: {
-      return this.Lleaflet_MapOptions__f_zoomControl;
-      break
-    }
-    case 1: {
-      return this.Lleaflet_MapOptions__f_maxZoom;
-      break
-    }
-    default: {
-      throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + x$1))
-    }
-  }
-});
-$c_Lleaflet_MapOptions.prototype.productIterator__sc_Iterator = (function() {
-  return new $c_sr_ScalaRunTime$$anon$1(this)
-});
-$c_Lleaflet_MapOptions.prototype.hashCode__I = (function() {
-  var acc = (-889275714);
-  var hash = acc;
-  var data = (this.Lleaflet_MapOptions__f_zoomControl ? 1231 : 1237);
-  acc = $m_sr_Statics$().mix__I__I__I(hash, data);
-  var hash$1 = acc;
-  var data$1 = this.Lleaflet_MapOptions__f_maxZoom;
-  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
-  var hash$2 = acc;
-  return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 2)
-});
-$c_Lleaflet_MapOptions.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lleaflet_MapOptions.prototype.equals__O__Z = (function(x$1) {
-  if ((this === x$1)) {
-    return true
-  } else if ((x$1 instanceof $c_Lleaflet_MapOptions)) {
-    var MapOptions$1 = $as_Lleaflet_MapOptions(x$1);
-    return ((this.Lleaflet_MapOptions__f_zoomControl === MapOptions$1.Lleaflet_MapOptions__f_zoomControl) && (this.Lleaflet_MapOptions__f_maxZoom === MapOptions$1.Lleaflet_MapOptions__f_maxZoom))
-  } else {
-    return false
-  }
-});
-function $as_Lleaflet_MapOptions(obj) {
-  return (((obj instanceof $c_Lleaflet_MapOptions) || (obj === null)) ? obj : $throwClassCastException(obj, "leaflet.MapOptions"))
-}
-function $isArrayOf_Lleaflet_MapOptions(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lleaflet_MapOptions)))
-}
-function $asArrayOf_Lleaflet_MapOptions(obj, depth) {
-  return (($isArrayOf_Lleaflet_MapOptions(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lleaflet.MapOptions;", depth))
-}
-var $d_Lleaflet_MapOptions = new $TypeData().initClass({
-  Lleaflet_MapOptions: 0
-}, false, "leaflet.MapOptions", {
-  Lleaflet_MapOptions: 1,
-  O: 1,
-  s_Product: 1,
-  s_Equals: 1,
-  s_Serializable: 1,
-  Ljava_io_Serializable: 1
-});
-$c_Lleaflet_MapOptions.prototype.$classData = $d_Lleaflet_MapOptions;
 /** @constructor */
 function $c_Lobservatory_Color(red, green, blue) {
   this.Lobservatory_Color__f_red = 0;

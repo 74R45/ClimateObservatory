@@ -1,19 +1,17 @@
 package observatory
 
-import leaflet.{L, MapOptions}
+import leaflet.L
 
 import scala.scalajs.js
-import org.scalajs.dom.{Event, Node, document}
+import org.scalajs.dom.{Event, Node, console, document}
 import org.scalajs.dom.html.Input
-
 import scalatags.{DataConverters, LowPriorityImplicits}
-import scalatags.JsDom.{Cap, Aggregate, tags, attrs, styles}
+import scalatags.JsDom.{Aggregate, Cap, attrs, styles, tags}
 
 object Implicits extends Cap with Aggregate with DataConverters with LowPriorityImplicits
 import Implicits._
 
 object JSMain {
-
   def main(args: Array[String]): Unit = {
     val availableLayers = Interaction2.availableLayers
     val (radioButtonElement, selectedLayer) = makeRadioButtons(availableLayers)
@@ -31,15 +29,17 @@ object JSMain {
 
   def setupMap(selectedLayer: Signal[Layer], selectedYear: Signal[Int]): Unit = {
     val mapElement = tags.div(styles.height := "100%").render
-    val map = L.map(mapElement, MapOptions(zoomControl = false, maxZoom = 3))
+    console.log(js.Dynamic.literal(zoomControl = false, maxZoom = 3))
+    val map = L.map(mapElement, js.Dynamic.literal(zoomControl = false, maxZoom = 3))
     map.setView(L.latLng(48.0, 14.0), 3)
-    L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png", "anonymous").addTo(map)
+    L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png", js.Dynamic.literal(crossOrigin = "anonymous")).addTo(map)
     val urlSignal = Interaction2.layerUrlPattern(selectedLayer, selectedYear)
-    val layer = L.tileLayer(urlSignal(), "anonymous")
+    val layer = L.tileLayer(urlSignal(), js.Dynamic.literal(errorTileUrl = "target/errorTile.png"))
     layer.addTo(map)
     Signal {
       layer.setUrl(urlSignal())
     }
+    map.addControl(L.control.zoom(js.Dynamic.literal(position = "bottomright")))
     document.body.appendChild(mapElement.render)
     map.invalidateSize()
   }
@@ -62,7 +62,7 @@ object JSMain {
         styles.position.absolute,
         styles.top := 10.px,
         styles.right := 0,
-        styles.left := 50.px,
+        styles.left := 10.px,
         styles.height := 2.em,
         styles.zIndex := 1500
       )(

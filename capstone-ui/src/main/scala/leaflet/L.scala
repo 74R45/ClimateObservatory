@@ -2,17 +2,16 @@ package leaflet
 
 import org.scalajs.dom.Element
 
-import scala.annotation.meta.field
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{JSExport, JSGlobal}
+import scala.scalajs.js.annotation.JSGlobal
 
-@JSGlobal("L")
 @js.native
+@JSGlobal("L")
 object L extends js.Object {
 
-  def map(elementId: Element, options: MapOptions): Map = js.native
+  def map(elementId: Element, options: js.Dynamic): Map = js.native
 
-  def tileLayer(urlPattern: String, crossOrigin: String): TileLayer = js.native
+  def tileLayer(urlPattern: String, options: js.Dynamic): TileLayer = js.native
 
   def control: ControlFactory = js.native
 
@@ -41,11 +40,6 @@ sealed trait Map extends js.Object {
   def on(eventName: String, callback: js.Function1[Event, _]): Unit = js.native
 }
 
-case class MapOptions(
-  @(JSExport @field) zoomControl: Boolean,
-  @(JSExport @field) maxZoom: Int
-)
-
 @js.native
 sealed trait TileLayer extends js.Object {
 
@@ -56,15 +50,11 @@ sealed trait TileLayer extends js.Object {
 
 @js.native
 sealed trait ControlFactory extends js.Object {
-  def zoom(options: ZoomOptions): Zoom
+  def zoom(options: js.Dynamic): Zoom
 }
 
 @js.native
 sealed trait Control extends js.Object
-
-case class ZoomOptions(
-  @(JSExport @field) position: String
-)
 
 @js.native
 sealed trait Zoom extends Control

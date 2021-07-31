@@ -32,11 +32,11 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="capstone-observatory" />
-    <orderEntry type="library" name="sourcecode_sjs1_2.12-0.2.3" level="project" />
-    <orderEntry type="library" name="scalatags_sjs1_2.12-0.9.4" level="project" />
+    <orderEntry type="library" name="scala-sdk-2.12.8" level="application" />
     <orderEntry type="library" name="scalajs-dom_sjs1_2.12-1.1.0" level="project" />
     <orderEntry type="library" name="scalajs-library_2.12-1.6.0" level="project" />
     <orderEntry type="library" name="scalajs-test-interface_2.12-1.6.0" level="project" />
-    <orderEntry type="library" name="scala-sdk-2.12.8" level="application" />
+    <orderEntry type="library" name="scalatags_sjs1_2.12-0.9.4" level="project" />
+    <orderEntry type="library" name="sourcecode_sjs1_2.12-0.2.3" level="project" />
   </component>
 </module>
