@@ -1235,10 +1235,6 @@ $c_Lobservatory_JSMain$.prototype.setupMap__Lobservatory_Signal__Lobservatory_Si
   var $$x1 = this$1.div__Lscalatags_JsDom$TypedTag();
   var array = [$m_Lscalatags_JsDom$styles$().height__Lscalatags_generic_StyleMisc$PixelAutoStyle().$colon$eq__O__Lscalatags_generic_PixelStyleValue__Lscalatags_generic_StylePair("100%", $m_Lobservatory_Implicits$().Lobservatory_Implicits$__f_stringPixelStyle)];
   var mapElement = $$x1.apply__sc_Seq__Lscalatags_JsDom$TypedTag($ct_sjs_js_WrappedArray__sjs_js_Array__(new $c_sjs_js_WrappedArray(), array)).render__Lorg_scalajs_dom_raw_Element();
-  $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console().log({
-    "zoomControl": false,
-    "maxZoom": 3
-  });
   var map = L.map(mapElement, {
     "zoomControl": false,
     "maxZoom": 3
@@ -1253,7 +1249,7 @@ $c_Lobservatory_JSMain$.prototype.setupMap__Lobservatory_Signal__Lobservatory_Si
   });
   layer.addTo(map);
   $m_Lobservatory_Signal$();
-  var expr = new $c_sjsr_AnonFunction0(((this$22, layer$1, urlSignal$1) => (() => {
+  var expr = new $c_sjsr_AnonFunction0(((this$17, layer$1, urlSignal$1) => (() => {
     layer$1.setUrl($as_T(urlSignal$1.apply__O()))
   }))(this, layer, urlSignal));
   $ct_Lobservatory_Signal__F0__(new $c_Lobservatory_Signal(), expr);
@@ -1261,8 +1257,8 @@ $c_Lobservatory_JSMain$.prototype.setupMap__Lobservatory_Signal__Lobservatory_Si
     "position": "bottomright"
   }));
   var $$x2 = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().body;
-  var this$28 = $m_Lobservatory_Implicits$();
-  $$x2.appendChild(new $c_Lscalatags_LowPriorityImplicits$bindNode(this$28, mapElement).Lscalatags_LowPriorityImplicits$bindNode__f_e);
+  var this$23 = $m_Lobservatory_Implicits$();
+  $$x2.appendChild(new $c_Lscalatags_LowPriorityImplicits$bindNode(this$23, mapElement).Lscalatags_LowPriorityImplicits$bindNode__f_e);
   map.invalidateSize()
 });
 $c_Lobservatory_JSMain$.prototype.makeRadioButtons__sc_Seq__T2 = (function(availableLayers) {
@@ -1637,13 +1633,6 @@ function $p_Lorg_scalajs_dom_package$__document$lzycompute__Lorg_scalajs_dom_raw
   };
   return $thiz.Lorg_scalajs_dom_package$__f_document
 }
-function $p_Lorg_scalajs_dom_package$__console$lzycompute__Lorg_scalajs_dom_raw_Console($thiz) {
-  if (((134217728 & $thiz.Lorg_scalajs_dom_package$__f_bitmap$0) === 0)) {
-    $thiz.Lorg_scalajs_dom_package$__f_console = console;
-    $thiz.Lorg_scalajs_dom_package$__f_bitmap$0 = (134217728 | $thiz.Lorg_scalajs_dom_package$__f_bitmap$0)
-  };
-  return $thiz.Lorg_scalajs_dom_package$__f_console
-}
 /** @constructor */
 function $c_Lorg_scalajs_dom_package$() {
   this.Lorg_scalajs_dom_package$__f_ApplicationCache = null;
@@ -1688,9 +1677,6 @@ $c_Lorg_scalajs_dom_package$.prototype.window__Lorg_scalajs_dom_raw_Window = (fu
 });
 $c_Lorg_scalajs_dom_package$.prototype.document__Lorg_scalajs_dom_raw_HTMLDocument = (function() {
   return (((67108864 & this.Lorg_scalajs_dom_package$__f_bitmap$0) === 0) ? $p_Lorg_scalajs_dom_package$__document$lzycompute__Lorg_scalajs_dom_raw_HTMLDocument(this) : this.Lorg_scalajs_dom_package$__f_document)
-});
-$c_Lorg_scalajs_dom_package$.prototype.console__Lorg_scalajs_dom_raw_Console = (function() {
-  return (((134217728 & this.Lorg_scalajs_dom_package$__f_bitmap$0) === 0) ? $p_Lorg_scalajs_dom_package$__console$lzycompute__Lorg_scalajs_dom_raw_Console(this) : this.Lorg_scalajs_dom_package$__f_console)
 });
 var $d_Lorg_scalajs_dom_package$ = new $TypeData().initClass({
   Lorg_scalajs_dom_package$: 0
@@ -3663,9 +3649,9 @@ function $c_ju_regex_Matcher(pattern0, input0, regionStart0, regionEnd0) {
   this.ju_regex_Matcher__f_regionEnd0 = regionEnd0;
   this.ju_regex_Matcher__f_regexp = this.ju_regex_Matcher__f_pattern0.newJSRegExp__sjs_js_RegExp();
   var this$1 = this.ju_regex_Matcher__f_input0;
-  var beginIndex = this.ju_regex_Matcher__f_regionStart0;
-  var endIndex = this.ju_regex_Matcher__f_regionEnd0;
-  var this$2 = $dp_substring__I__I__T(this$1, beginIndex, endIndex);
+  var start = this.ju_regex_Matcher__f_regionStart0;
+  var end = this.ju_regex_Matcher__f_regionEnd0;
+  var this$2 = $dp_substring__I__I__T(this$1, start, end);
   this.ju_regex_Matcher__f_inputstr = this$2;
   this.ju_regex_Matcher__f_lastMatch = null;
   this.ju_regex_Matcher__f_lastMatchIsValid = false;
