@@ -20,7 +20,7 @@ Additionally, there's a ***deviations*** overlay, which shows how the yearly ave
 
 ## *How do I use it?*
 
-1. Go to https://74r45.github.io/ClimateObservatory/. The project is hosted on Github Pages so it's available anytime!
+1. Go to https://74r45.github.io/ClimateObservatory/. The project is hosted on GitHub Pages so it's available anytime!
 2. Try it yourself locally! To do this:
    -   Clone the repository
    -   [Download the dataset](src/main/resources)
