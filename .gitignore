@@ -15,13 +15,4 @@ src/main/resources/*
 target/*
 !target/temperatures/
 !target/deviations/
-
-target/temperatures/*
-target/deviations/*
-!target/temperatures/1975/
-!target/temperatures/2014/
-!target/temperatures/2015/
-!target/deviations/1991/
-!target/deviations/2014/
-!target/deviations/2015/
 !target/errorTile.png
